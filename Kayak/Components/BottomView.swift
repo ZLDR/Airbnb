@@ -18,12 +18,16 @@ struct BottomView: View {
             }
             .padding()
             
+            VStack(spacing: 12){
+                Chips()
+                Chips()
+            }
+            .padding(.horizontal)
+            
             Spacer()
-            Chips()
-            Chips()
         }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: 400)
+        .padding(.vertical)
+        .frame(maxWidth: .infinity, maxHeight: 375)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
     }
@@ -32,5 +36,7 @@ struct BottomView: View {
 struct BottomView_Previews: PreviewProvider {
     static var previews: some View {
         BottomView()
+            .edgesIgnoringSafeArea(.all)
+            .background(Color(.blue))
     }
 }
